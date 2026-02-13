@@ -81,11 +81,11 @@ export default function App() {
     return(
       <>
       <div className='letter'>
-        <div className='date'>02-14-2026</div>
+        <div className='date'>02-13-2026</div>
         <div className='love-message'>
           Dear Zizi, 
           <br/><br/>
-          I bought you plushie kasi i wanted you to have something na mahhug mo kapag namimiss mo ako or nassad ikaw. I know it can be really hard sometimes lalo na at madami kang responsibilities and humihirap na ang acads natin, dagdag pa na nagkawork kana. Gusto ko lang malaman mo na you can always come to me whenever you feel tired or helpless. Alam ko na hindi ka nagsasabi ng problem mo hanggat kaya mo pa pero i really appreciate it kapag nagllean ka sakin kahit kaunti. Ayoko nang nahihirapan at nalulungkot ka, alam mo yan. I know naman na you are a strong independent girl na, pero im still your partner so let me atleast do my part kahit na acads lang ang alam kong kaya ko ihelp. I may not be the best person you can talk to but i will do my best to provide a safe and lighter space for you.
+          I bought you plushie kasi i wanted you to have something na mahhug mo kapag namimiss mo ako or nassad ikaw. I know it can be really hard sometimes lalo na at madami kang responsibilities and humihirap na ang acads natin, dagdag pa na nagkawork kana. Gusto ko lang malaman mo na you can always come to me whenever you feel tired or helpless. Alam ko na hindi ka nagsasabi ng problem mo hanggat kaya mo pa pero i really appreciate it kapag nagllean ka sakin kahit kaunti. Ayoko nang nahihirapan at nalulungkot ka, alam mo yan. I know naman na you are a strong independent girl na, pero im still your partner so let me atleast do my part kahit na acads lang ang alam kong kaya ko ihelp. 
           <br/><br/>
           I also bought you flowers and bracelet kasi i know na you like them. I love it when you smile kasi e especially kapag nakakatanggap ka ng gifts. Makita ko lang na masaya ka, masaya na rin ako. 
           <br/><br/>
