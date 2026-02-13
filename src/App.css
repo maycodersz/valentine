@@ -1,0 +1,222 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  border: 0; 
+  padding: 0;
+}
+
+body {
+  font-family: "Dancing Script", cursive;
+  background: radial-gradient(circle,rgba(245, 175, 175, 1) 0%, rgba(249, 223, 223, 1) 100%);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.loading-screen {
+  font-size: 5rem;
+  text-align: center;
+}
+
+/*Dialog*/
+
+.dialog {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  background: #F9DFDF;
+  padding: 2rem 4rem;
+  border-radius: 2rem;
+}
+
+.dialog.hide {
+  transform: translate(-50%, -200%);
+  animation: hide 2s ease;
+}
+
+.gif {
+  width: 500px;
+}
+
+.dialog-actions {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.dialog-actions button {
+  min-width: 100px;
+  font-size: 1rem;
+  font-weight: bold;
+  padding: 1rem 2rem;
+  border-radius: 1rem;
+  cursor: pointer;
+}
+
+.yes-btn {
+  background-color: rgb(53, 190, 53);
+  color: white;
+}
+
+.no-btn {
+  background-color: hsl(0, 84%, 63%);
+  color: white;
+}
+
+.read-btn {
+  background-color: #F5AFAF;
+  color: #FFFFFF;
+}
+
+@keyframes hide {
+  0% {transform: translate(-50%, -50%);}
+  100% {transform: translate(-50%, -200%);}
+}
+
+/*Letter*/
+.letter {
+  max-width: 680px;
+  width: 100%;
+  background: #fffcf8;
+  border-radius: 2px;
+  box-shadow:
+  0 2px 0.8px rgba(0, 0, 0, 0.01),
+  0 4px 3px rgba(0, 0, 0, 0.01),
+  0 12px 12px rgba(80, 50, 20, 0.04),
+  inset 0 0 0 1px rgba(255, 245, 235, 0.7);
+  padding: 2.8rem 2.2rem;
+  position: relative;
+  border: 1px solid #f0e4d5;
+  animation: fadeIn 1.5s ease;
+}
+
+.letter::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 8px;
+  background: linear-gradient(
+  90deg,
+    transparent 30%,
+    #f3e3d3 50%,
+    transparent 70%
+  );
+  opacity: 0.3;
+}
+
+.date {
+  text-align: right;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #a28d7a;
+  margin-bottom: 2.5rem;
+  font-family: "Avenir Next", "Helvetica Neue", sans-serif;
+  font-weight: 300;
+}
+
+.love-message {
+  font-size: 1rem;
+  line-height: 1.8;
+  white-space: pre-line; 
+  font-family: "Cochin", "Georgia", "Times New Roman", serif;
+  color: #3d352e;
+  margin-bottom: 2rem;
+  font-style: normal;
+  word-spacing: 0.5px;
+  /* subtle hand-drawn feel */
+  text-shadow: 0.5px 0.5px 0 rgba(200, 180, 160, 0.1);
+}
+
+.handwritten-sign {
+  font-family: "Brush Script MT", "Cochin", "Georgia", cursive;
+  font-size: 1.9rem;
+  color: #684f3c;
+  margin-top: 0.8rem;
+  margin-bottom: 0.4rem;
+  text-align: right;
+  font-weight: 400;
+  opacity: 0.9;
+  transform: rotate(-0.5deg);
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; transform: translateY(10px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+/*Memories*/
+.memories {
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  animation: fadeIn 1.5s ease;
+}
+
+.memories h1 {
+  font-size: 3rem;
+}
+
+.image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.image-container img {
+  aspect-ratio: 4 / 5;
+  width: 250px;
+  object-fit: cover;
+  border-radius: 1rem;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.image-container img:hover {
+  transform: translateY(-10px);
+}
+
+@keyframes float {
+  0%{transform: translateY(50px);}
+  100%{transform: translateY(0px);}
+}
+
+/*Navigations*/
+.navigation-bar {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: center;
+  gap: 0.25rem;
+}
+
+.navigation-bar button {
+  padding: 0.25rem 0.5rem;
+  background-color: #fffcf8;
+  color: #a28d7a;
+  border-radius: 0.25rem;
+  cursor: pointer;
+}
