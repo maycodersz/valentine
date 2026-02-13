@@ -45,6 +45,10 @@ body {
   animation: hide 2s ease;
 }
 
+.dialog h1 {
+  text-align: center;
+}
+
 .gif {
   width: 500px;
 }
