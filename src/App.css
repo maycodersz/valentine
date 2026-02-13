@@ -22,8 +22,6 @@ body {
   text-align: center;
 }
 
-/*Dialog*/
-
 .dialog {
   position: absolute;
   top: 50%;
@@ -90,7 +88,6 @@ body {
   100% {transform: translate(-50%, -200%);}
 }
 
-/*Letter*/
 .letter {
   max-width: 680px;
   width: 100%;
@@ -123,6 +120,51 @@ body {
   opacity: 0.3;
 }
 
+.letter.blurred {
+  filter: blur(3px);
+}
+
+.unlock-container {
+  margin-top: 1rem;
+  max-width: 680px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.unlock-container input {
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.25rem;
+}
+
+.unlock-container button {
+  min-width: 100px;
+  font-weight: bold;
+  cursor: pointer;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.25rem;
+  background: #fffcf8;
+  color: #a28d7a;
+}
+
+.password-clue {
+  margin-top: 0.5rem;
+  max-width: 680px;
+  width: 100%;
+  text-align: center;
+  font-size: 1rem;
+  letter-spacing: 1.5px;
+  animation: softPulse 2s infinite;
+}
+
+@keyframes softPulse {
+  0% { opacity: 0.6; }
+  50% { opacity: 1; }
+  100% { opacity: 0.6; }
+}
+
 .date {
   text-align: right;
   font-size: 0.85rem;
@@ -143,7 +185,6 @@ body {
   margin-bottom: 2rem;
   font-style: normal;
   word-spacing: 0.5px;
-  /* subtle hand-drawn feel */
   text-shadow: 0.5px 0.5px 0 rgba(200, 180, 160, 0.1);
 }
 
@@ -164,7 +205,6 @@ body {
     100% { opacity: 1; transform: translateY(0); }
 }
 
-/*Memories*/
 .memories {
   max-width: 100%;
   display: flex;
@@ -193,19 +233,22 @@ body {
   object-fit: cover;
   border-radius: 1rem;
   cursor: pointer;
-  transition: 0.2s ease;
+  transition: 0.2s ease infinite;
 }
 
 .image-container img:hover {
-  transform: translateY(-10px);
+  transform: translateY(-25px);
 }
 
 @keyframes float {
-  0%{transform: translateY(50px);}
+  0%{transform: translateY(25px);}
   100%{transform: translateY(0px);}
 }
 
-/*Navigations*/
+.clue {
+  text-align: center;
+}
+
 .navigation-bar {
   position: fixed;
   left: 0;
@@ -225,7 +268,6 @@ body {
   cursor: pointer;
 }
 
-/* Media Queries - Responsive Design */
 @media screen and (max-width: 768px) {
   .loading-screen {
     font-size: 4rem;
@@ -310,6 +352,11 @@ body {
   .navigation-bar {
     padding: 0.75rem 1rem;
   }
+
+  .password-clue {
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+  }
 }
 
 @media screen and (max-width: 320px) {
@@ -338,7 +385,6 @@ body {
   }
 }
 
-/* Height-based media queries for better vertical responsiveness */
 @media screen and (max-height: 700px) {
   .dialog {
     gap: 1rem;

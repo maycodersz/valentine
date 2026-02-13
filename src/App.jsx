@@ -18,6 +18,7 @@ export default function App() {
   const [yes, setYes] = useState(false);
   const [isShown, setIsShown] = useState(false);
   const [currentNav, setCurrentNav] = useState(0);
+  const [openLetter, setOpenLetter] = useState(false);
 
   const gifs = {
     0 : loveHeart,
@@ -64,38 +65,50 @@ export default function App() {
 
   const Memories = () => {
     function getRandomInt(min, max) {
-      return Math.floor(Math.random() * max - min + 1) + min;
+      return Math.floor(Math.random() * (max - min + 1)) + min;
     }
 
     return(
       <div className='memories'>
         <h1>Memories</h1>
         <div className='image-container'>
-          {images.map(url => <img src={url} style={{'animation' : `animation: float ${getRandomInt(1, 10)}s ease infinite`}}/>)}
+          {images.map((url, index) => <img key={index} src={url} style={{animation: `float ${getRandomInt(5, 10)}s ease infinite alternate`}}/>)}
         </div>
       </div>
     );
   }
 
-  const Letter = () => {
-    return(
-      <>
-      <div className='letter'>
-        <div className='date'>02-13-2026</div>
-        <div className='love-message'>
-          Dear Zizi, 
-          <br/><br/>
-          I bought you plushie kasi i wanted you to have something na mahhug mo kapag namimiss mo ako or nassad ikaw. I know it can be really hard sometimes lalo na at madami kang responsibilities and humihirap na ang acads natin, dagdag pa na nagkawork kana. Gusto ko lang malaman mo na you can always come to me whenever you feel tired or helpless. Alam ko na hindi ka nagsasabi ng problem mo hanggat kaya mo pa pero i really appreciate it kapag nagllean ka sakin kahit kaunti. Ayoko nang nahihirapan at nalulungkot ka, alam mo yan. I know naman na you are a strong independent girl na, pero im still your partner so let me atleast do my part kahit na acads lang ang alam kong kaya ko ihelp. 
-          <br/><br/>
-          I also bought you flowers and bracelet kasi i know na you like them. I love it when you smile kasi e especially kapag nakakatanggap ka ng gifts. Makita ko lang na masaya ka, masaya na rin ako. 
-          <br/><br/>
-          I love you so much, zi. 
-        </div>
-        <div className='handwritten-sign'>yours,<br/>Maycoder</div>
+const Letter = () => {
+  const [password, setPassword] = useState('');
+
+  return(
+    <>
+    <div className={`letter ${!openLetter && 'blurred'}`}>
+      <div className='date'>02-13-2026</div>
+      <div className='love-message'>
+        Dear Zizi, 
+        <br/><br/>
+        I bought you plushie kasi i wanted you to have something na mahhug mo kapag namimiss mo ako or nassad ikaw. I know it can be really hard sometimes lalo na at madami kang responsibilities and humihirap na ang acads natin, dagdag pa na nagkawork kana. Gusto ko lang malaman mo na you can always come to me whenever you feel tired or helpless. Alam ko na hindi ka nagsasabi ng problem mo hanggat kaya mo pa pero i really appreciate it kapag nagllean ka sakin kahit kaunti. Ayoko nang nahihirapan at nalulungkot ka, alam mo yan. I know naman na you are a strong independent girl na, pero im still your partner so let me atleast do my part kahit na acads lang ang alam kong kaya ko ihelp. 
+        <br/><br/>
+        I also bought you flowers and bracelet kasi i know na you like them. I love it when you smile kasi e especially kapag nakakatanggap ka ng gifts. Makita ko lang na masaya ka, masaya na rin ako. 
+        <br/><br/>
+        I love you so much, zi. 
       </div>
-      </>
-    );
-  }
+      <div className='handwritten-sign'>yours,<br/>Maycoder</div>
+    </div>
+    {!openLetter &&
+    <>
+    <div className='unlock-container'>
+      <input type='password' onChange={(e) => setPassword(e.target.value)} value={password}/>
+      <button onClick={() => password === 'ilovezizisomuch' && setOpenLetter(true)}>Unlock</button>
+    </div>
+    <div className='password-clue'>
+      password is on the qr code on your gift!
+    </div>
+    </>}
+    </>
+  );
+}
 
   const Dialog = () => {
     return(
@@ -119,8 +132,8 @@ export default function App() {
   const Navigation = () => {
     return(
     <div className='navigation-bar'>
-      <button onClick={() => setCurrentNav(0)}>0</button>
-      <button onClick={() => setCurrentNav(1)}>1</button>
+      <button onClick={() => setCurrentNav(0)}>Letter</button>
+      <button onClick={() => setCurrentNav(1)}>Memories</button>
     </div>)
   }
 
