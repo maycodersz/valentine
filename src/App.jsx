@@ -97,15 +97,18 @@ const Letter = () => {
       <div className='handwritten-sign'>yours,<br/>Maycoder</div>
     </div>
     {!openLetter &&
-    <>
     <div className='unlock-container'>
-      <input type='password' onChange={(e) => setPassword(e.target.value)} value={password}/>
-      <button onClick={() => password === 'ilovezizisomuch' && setOpenLetter(true)}>Unlock</button>
-    </div>
-    <div className='password-clue'>
-      password is on the qr code on your gift!
-    </div>
-    </>}
+        <div className='unlock'>
+          <label>
+            <span>Passcode</span>
+            <input type='password' onChange={(e) => setPassword(e.target.value)} value={password} placeholder='Enter the passcode'/>
+          </label>
+          <button onClick={() => password === 'ilovezizisomuch' && setOpenLetter(true)}>Unlock</button>
+          <div className='password-clue'>
+            password is on the qr code on your gift
+          </div>
+        </div>
+      </div>}
     </>
   );
 }

@@ -125,38 +125,77 @@ body {
 }
 
 .unlock-container {
-  margin-top: 1rem;
-  max-width: 680px;
-  width: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #F9DFDF;
+  padding: 2rem;
+  border-radius: 1.5rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  width: 90%;
+  max-width: 400px;
+}
+
+.unlock {
   display: flex;
+  flex-direction: column;
   justify-content: center;
-  align-items: center;
+  align-items: stretch;
   gap: 1rem;
+  width: 100%;
 }
 
-.unlock-container input {
-  padding: 0.25rem 0.5rem;
-  border-radius: 0.25rem;
+.unlock label {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  font-family: "Avenir Next", "Helvetica Neue", sans-serif;
+  color: #513b2c;
+  width: 100%;
 }
 
-.unlock-container button {
-  min-width: 100px;
+.unlock label span {
+  font-weight: 500;
+  letter-spacing: 1px;
+}
+
+.unlock label input {
+  padding: 0.75rem 1rem;
+  border-radius: 0.5rem;
+  border: 1px solid #f0e4d5;
+  background: #fffcf8;
+  font-size: 1rem;
+  width: 100%;
+}
+
+.unlock button {
   font-weight: bold;
   cursor: pointer;
-  padding: 0.25rem 0.5rem;
-  border-radius: 0.25rem;
-  background: #fffcf8;
-  color: #a28d7a;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  background-color: #F5AFAF;
+  color: #FFFFFF;
+  font-size: 1.1rem;
+  border: none;
+  transition: all 0.2s ease;
+  width: 100%;
+}
+
+.unlock button:hover {
+  background-color: #f19b9b;
+  transform: translateY(-2px);
 }
 
 .password-clue {
-  margin-top: 0.5rem;
-  max-width: 680px;
-  width: 100%;
   text-align: center;
   font-size: 1rem;
   letter-spacing: 1.5px;
   animation: softPulse 2s infinite;
+  font-family: "Avenir Next", "Helvetica Neue", sans-serif;
+  color: #a28d7a;
+  font-style: italic;
 }
 
 @keyframes softPulse {
@@ -233,11 +272,11 @@ body {
   object-fit: cover;
   border-radius: 1rem;
   cursor: pointer;
-  transition: 0.2s ease infinite;
+  transition: 0.2s ease;
 }
 
 .image-container img:hover {
-  transform: translateY(-25px);
+  transform: translateY(-10px);
 }
 
 @keyframes float {
@@ -294,6 +333,12 @@ body {
 
   .image-container img {
     width: 200px;
+  }
+
+  .unlock-container {
+    width: 90%;
+    max-width: 350px;
+    padding: 1.5rem;
   }
 }
 
@@ -353,6 +398,24 @@ body {
     padding: 0.75rem 1rem;
   }
 
+  .unlock-container {
+    padding: 1.25rem;
+  }
+
+  .unlock label {
+    font-size: 0.8rem;
+  }
+
+  .unlock label input {
+    padding: 0.6rem 0.8rem;
+    font-size: 0.9rem;
+  }
+
+  .unlock button {
+    padding: 0.6rem 0.8rem;
+    font-size: 1rem;
+  }
+
   .password-clue {
     font-size: 0.8rem;
     letter-spacing: 1px;
@@ -382,6 +445,10 @@ body {
 
   .handwritten-sign {
     font-size: 1.2rem;
+  }
+
+  .unlock-container {
+    padding: 1rem;
   }
 }
 
